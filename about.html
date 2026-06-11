@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Francesco Luca Del Vecchio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/maze-game.css">
+    <style>
+        .about-section {
+            padding: 3rem 0; 
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: start;
+        }
+        @media (max-width: 992px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        .highlight-box {
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+        .quote {
+            font-style: italic;
+            color: var(--accent-red);
+            font-size: 1.2rem;
+            margin: 1.5rem 0;
+            border-left: 3px solid var(--accent-red);
+            padding-left: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Francesco Luca Del Vecchio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html" class="active">About</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main style="padding-top: 6rem;">
+        <div class="container">
+            <!-- About Me Section -->
+            <section class="about-section" style="padding-top: 0;">
+                <div class="about-grid">
+                    <div class="reveal">
+                        <h1 style="font-size: 4rem; margin-top: 0; margin-bottom: 2rem;">About Me</h1>
+                        <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
+                            Hello, my name is <strong style="color: var(--accent-red);">Francesco</strong>, I am 25 years old.
+                        </p>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            Since I was a child, I’ve always had a great passion for technology, especially computer science. This curiosity has driven me to explore the inner workings of software and hardware alike.
+                        </p>
+                        <p style="color: var(--text-secondary);">
+                            Beyond technology, I’m a true <strong>card game enthusiast</strong>. I love everything related to cars, racing, and high-performance. I also appreciate the sense of innovation, adding new rules and mechanics, even if it sometimes means breaking the rules themselves. I'd like to revive some card games that don't exist in digital format or that haven't been successful beyond their home country.
+                        </p>
+                    </div>
+                    <div class="reveal">
+                        <img src="assets/images/francesco_profile.jpg" alt="Francesco Luca Del Vecchio" style="width: 100%; border-radius: 12px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                        <div class="highlight-box">
+                            <h3 style="margin-bottom: 1rem; color: var(--accent-red);">Education</h3>
+                            <ul style="list-style: none; color: var(--text-secondary);">
+                                <li style="margin-bottom: 1rem;">
+                                    <strong>Digital Bros Game Academy</strong><br>
+                                    Specializing in Game Programming (Year 2)
+                                </li>
+                                <li style="margin-bottom: 2rem;">
+                                    <strong>Degree in Computer Science</strong><br>
+                                    ITT and Ettore Molinari Scientific High School (Year 5)
+                                </li>
+                            </ul>
+                            <a href="cv.html" class="btn btn-primary" style="width: 100%; text-align: center;">View Full CV / Print</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+           
+            <section class="about-section reveal">
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">My Career</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                    <div>
+                        <h4 style="color: var(--accent-red); margin-bottom: 1rem;">ITT and Ettore Molinari Scientific High School</h4>
+                        <p style="color: var(--text-secondary);">
+                            I graduated as an IT expert in 2020, obtaining certifications in Packet Trace and learning the C++ and Python languages. My first significant role was at <strong>MediaCom</strong> in Milan, a Call Center company. I quickly moved from a basic call center to managing IT systems, file documentation, and contract management via the company website.                        </p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-red); margin-bottom: 1rem;">Game for business</h4>
+                        <p style="color: var(--text-secondary);">
+                            After graduating as an IT expert in 2020, I was approached to take a three-part training course, and I chose the Game for Business course. It was my first foray into the video game industry and the beginning of my true passion.                        </p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--accent-red); margin-bottom: 1rem;">The Path to Game Dev</h4>
+                        <p style="color: var(--text-secondary);">
+                            At <strong>Shibboleth</strong>,we wanted to create a video game together, but I didn’t yet have the necessary skills to make it happen. That’s when they introduced me to the <strong>Digital Bros Game Academy</strong> where my true passion was rekindled. Creating interactive prototypes and combining logic with creativity made me realize that game development is where I belong. I am currently refining these skills at the Digital Bros Game Academy in Milan, focusing on Unity and Unreal Engine.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="about-section reveal">
+                <div class="about-grid">
+                    <div>
+                        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Human & Professional</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                            I work exceptionally well in teams, building strong professional relationships and valuing collaboration between creative minds.I am precise and reliable, but I also love pushing my limits.
+                            I have strong abilities in problem finding, problem setting, and problem solving, often through creative and unconventional approaches.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            
+            <section class="about-section reveal">
+                <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Certifications & Credentials</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 800px;">
+                    Beyond my formal education, I am committed to continuous learning and professional growth. Here are some of the certifications and recognitions I've earned along my journey.
+                </p>
+
+                <!-- Digital Bros Section -->
+                <div class="reveal" style="margin-bottom: 2.5rem;">
+                    <h3 style="color: var(--accent-red); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem;">
+                        <span style="background: #fff; border-radius: 4px; padding: 4px; display: flex; align-items: center; justify-content: center;">
+                            <img src="https://www.digitalbrosgameacademy.it/wp-content/themes/dbga-theme/assets/images/favicon.png" onerror="this.src='https://digitalbros.com/favicon.ico'" style="width: 24px; height: 24px;">
+                        </span>
+                        Digital Bros Game Academy
+                    </h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 260px)); gap: 1.5rem;">
+                        <div class="highlight-box" style="margin-top: 0; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--glass-border); background: var(--glass); border-radius: 12px;">
+                            <div style="width: 100%; aspect-ratio: 4/3; background: #fff; border-radius: 8px; margin-bottom: 1rem; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glass-border); cursor: pointer;" onclick="openLightbox('assets/images/dbga_best_project.png')">
+                                <img src="assets/images/dbga_best_project.png" alt="Best Project Award" style="max-width: 95%; max-height: 95%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--accent-red); margin-bottom: 0.3rem; font-size: 1rem;">Best Project: ArtHiss</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">December 2024 Milestone</p>
+                        </div>
+                        <div class="highlight-box" style="margin-top: 0; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--glass-border); background: var(--glass); border-radius: 12px;">
+                            <div style="width: 100%; aspect-ratio: 4/3; background: #fff; border-radius: 8px; margin-bottom: 1rem; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glass-border); cursor: pointer;" onclick="openLightbox('assets/images/dbga_best_potential.png')">
+                                <img src="assets/images/dbga_best_potential.png" alt="Best Potential Award" style="max-width: 95%; max-height: 95%; object-fit: contain;">
+                            </div>
+                            <h4 style="color: var(--accent-red); margin-bottom: 0.3rem; font-size: 1rem;">Best Potential: Ragnaraft</h4>
+                            <p style="font-size: 0.8rem; color: var(--text-secondary);">April 2025 Milestone</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 2px;">Other Credentials</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 260px)); gap: 1.5rem;">
+                    <!-- Gaming for business -->
+                    <div class="highlight-box" style="margin-top: 0; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--glass-border); background: var(--glass); border-radius: 12px;">
+                        <div style="width: 100%; aspect-ratio: 4/3; background: #fff; border-radius: 8px; margin-bottom: 1rem; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glass-border); cursor: pointer;" onclick="openLightbox('assets/images/Gaming_for_business.png')">
+                            <img src="assets/images/Gaming_for_business.png" alt="Gaming for business Certificate" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+                        </div>
+                        <h4 style="color: var(--accent-red); margin-bottom: 0.3rem; font-size: 1rem;">Gaming for business</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">Gaming for business Certificate | 2024</p>
+                    </div>
+
+                    <!-- Cisco Networking Academy -->
+                    <div class="highlight-box" style="margin-top: 0; padding: 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; border: 1px solid var(--glass-border); background: var(--glass); border-radius: 12px;">
+                        <div style="width: 100%; aspect-ratio: 4/3; background: #fff; border-radius: 8px; margin-bottom: 1rem; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid var(--glass); cursor: pointer;" onclick="openLightbox('assets/images/Cisco_it_essential.png')">
+                            <img src="assets/images/Cisco_it_essential.png" alt="Cisco Networking Academy Certificate" style="max-width: 90%; max-height: 90%; object-fit: contain;">
+                        </div>
+                        <h4 style="color: var(--accent-red); margin-bottom: 0.3rem; font-size: 1rem;">Cisco Networking Academy</h4>
+                        <p style="font-size: 0.8rem; color: var(--text-secondary);">IT Essential | 2018</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Francesco Luca Del Vecchio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Lightbox zoom logic
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = lb.querySelector('img');
+            img.src = src;
+            lb.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Certificate Zoom" onclick="event.stopPropagation()">
+    </div>
+</body>
+</html>

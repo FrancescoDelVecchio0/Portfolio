@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtHiss | Francesco Luca Del Vecchio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Francesco Luca Del Vecchio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-web" style="background-image: url('assets/images/arthiss2.png');">
+        <div class="container">
+            <div class="reveal">
+                <h1 style="font-size: 4.5rem; line-height: 1;">ArtHiss</h1>
+                <p style="color: var(--accent-red); font-weight: 600; margin-top: 1rem;">Unity | Team Project | Generalist Programmer</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 8rem;">
+        <div class="project-layout">
+            <div class="project-content">
+                <div class="reveal" style="background: rgba(255, 215, 0, 0.05); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 12px; padding: 1.2rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                    <div style="font-size: 2rem; filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));">🏆</div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h4 style="color: #ffd700; margin-bottom: 0.2rem; text-transform: uppercase; letter-spacing: 1px; font-family: 'Outfit'; font-size: 1.1rem;">Best Project Award</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">Recognized as the <strong>Best Project</strong> in the Game Programming Course at Digital Bros Game Academy (Dec 2024).</p>
+                    </div>
+                    <a href="assets/images/dbga_best_project.png" target="_blank" style="width: 80px; height: 60px; background: #fff; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255, 215, 0, 0.4); display: block; transition: transform 0.3s ease;">
+                        <img src="assets/images/dbga_best_project.png" alt="Award Certificate" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.9;">
+                    </a>
+                </div>
+
+                <section class="content-section reveal">
+                    <h2>Description</h2>
+                    <p>
+                        <strong>ArtHiss</strong> is a single player top-down game where the player controls a painter snake who must complete drawings on a canvas. By collecting paints, avoiding oil stains and obstacles, the snake grows longer and harder to control. 
+                    </p>
+                    <p>
+                        The gameplay combines classic Snake mechanics with creative painting and scoring combos, offering a unique blend of arcade challenge and artistic expression.
+                    </p>
+                    
+                    <div class="video-container" style="margin-top: 2rem;">
+                        <iframe src="https://www.youtube.com/embed/mAw8gx_4Fag" title="ArtHiss Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <a href="https://drive.google.com/file/d/1MVkN9QWeVzaU3fDxS-hvp9sQaQ9tt53D/view" target="_blank" class="btn btn-primary">Download (Google Drive)</a>
+                    </div>
+                </section>
+
+                <section class="content-section reveal">
+                    <h2>My Role</h2>
+                    <p>
+                        This was my first Unity project and my first time working within a large team. I was fully responsible for the programming some core systems:
+                    </p>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--accent-red);">Core UI</h4>
+                        <p>Integration UI and HUD elements, pause menu and selection levels.</p>
+                    </div>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--accent-red);">Scoring</h4>
+                        <p>Built the combo-based scoring system and handled the integration of the HUD and UI elements.</p>
+                    </div>
+                </section>
+
+                <section class="content-section reveal">
+                    <h2>Growth & Learning</h2>
+                    <p>
+                        Even as a first project, I managed to optimize the game to run smoothly. This experience was fundamental in learning how to structure complex Unity projects, collaborate with artists and designers, and make independent technical decisions under pressure.
+                    </p>
+                </section>
+                
+                <a href="projects.html" class="btn" style="border: 1px solid var(--glass-border);">← Back to Projects</a>
+            </div>
+
+            <aside class="project-sidebar reveal">
+                <div class="sidebar-section">
+                    <h4>Role</h4>
+                    <p>Generalist Programmer (Team Project)</p>
+                </div>
+                <div class="sidebar-section">
+                    <h4>Technology</h4>
+                    <p>Unity, C#</p>
+                </div>
+                <div class="sidebar-section">
+                    <h4>Genre</h4>
+                    <p>Arcade / Puzzle</p>
+                </div>
+                <div class="sidebar-section">
+                    <h4>Key Features</h4>
+                    <ul style="list-style: none; padding: 0; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li>· Creative Painting</li>
+                        <li>· Combo Multipliers</li>
+                        <li>· Dynamic Growth</li>
+                        <li>· Resource Management</li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Francesco Luca Del Vecchio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

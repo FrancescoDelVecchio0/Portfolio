@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Duat! | Francesco Luca Del Vecchio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Francesco Luca Del Vecchio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="project-web" style="background-image: url('assets/images/to_duat_hero.png');">
+        <div class="container">
+            <div class="reveal">
+                <h1 style="font-size: 4.5rem; line-height: 1;">To-Duat!</h1>
+                <p style="color: var(--accent-red); font-weight: 600; margin-top: 1rem;">Unity | Funerary Simulator | Team Project</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding-bottom: 8rem;">
+        <div class="project-layout">
+            <div class="project-content">
+                <section class="content-section reveal">
+                    <h2>Description</h2>
+                    <p>
+                        <strong>To-Duat!</strong> is a chaotic first-person simulator set in Ancient Egypt, developed as a team academic project. The player takes on the role of a sinner temporarily replacing Anubis in his funerary rites. 
+                    </p>
+                    <p>
+                        Across five working days, the goal is to complete frantic and complex rituals: analyzing corpses, purifying diseased organs, applying ritual ointments, and most importantly, weighing the hearts of the dead to decide their fate.
+                    </p>
+                    <p>
+                        The game combines time-based gameplay with chained tasks and daily variations: every mistake or delay directly affects the player’s own heart, which will be judged by Anubis at the end of the week. The toon art style and inspirations from titles like <em>Overcooked</em>, <em>The Mortuary Assistant</em>, and <em>Papers, Please</em> give the game a unique tone that mixes humor and tension.
+                    </p>
+                    
+                    <div class="video-container" style="margin-top: 2rem;">
+                        <iframe src="https://www.youtube.com/embed/Pm6GtF0oZaU" title="To-Duat! Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    
+                    <div style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://drive.google.com/file/d/1GYsUX1oWsOBIQYdR8MG75aIAMegIzd5s/view" target="_blank" class="btn btn-primary">Download for Windows</a>
+                    </div>
+                </section>
+
+                <section class="content-section reveal">
+                    <h2>Role & Contribution</h2>
+                    <p>
+                        In this project, my main role focused on HUD/UI implementation and support. My contributions spanned multiple disciplines:
+                    </p>
+
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--accent-red);">HUD & UI</h4>
+                        <p>Developed HUD systems including the timer, player hand interactions, and core UI elements, alongside a progression system integrated with the save system to allow the game to start from the first day or resume from later days after completion.</p>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--accent-red);">Localization Support</h4>
+                        <p>Contributed to the localization workflow by creating and managing translation files for UI, dialogues, and gameplay interactions</p>
+                    </div>
+                    
+                    <div style="margin-top: 1.5rem;">
+                        <h4 style="color: var(--accent-red);">Gameplay & Team Support</h4>
+                        <p>Contributed to core systems (UI, timer, saves) and managed complex merges between parallel branches to keep the build stable.</p>
+                    </div>
+                </section>
+                
+
+                <section class="content-section reveal">
+                    <h2>Gameplay Walkthrough</h2>
+                    <p style="margin-bottom: 2rem;">
+                        Watch the core mechanics in action, including corpse preparation, ritual procedures, and the heart-weighing ceremony.
+                    </p>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/2q5kJpgdb7c" title="To-Duat! Gameplay Walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </section>
+                
+                <a href="projects.html" class="btn" style="border: 1px solid var(--glass-border);">← Back to Projects</a>
+            </div>
+
+            <aside class="project-sidebar reveal">
+                <div class="sidebar-section">
+                    <h4>Role</h4>
+                    <p>Generalist / UI</p>
+                </div>
+                <div class="sidebar-section">
+                    <h4>Technology</h4>
+                    <p>Unity, C#</p>
+                </div>
+                <div class="sidebar-section">
+                    <h4>Genre</h4>
+                    <p>Simulator / Chaotic Casual</p>
+                </div>
+                <div class="sidebar-section">
+                    <h4>Platform</h4>
+                    <p>PC, MacOS</p>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Francesco Luca Del Vecchio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

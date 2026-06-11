@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Francesco Luca Del Vecchio - Game Programmer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        :root {
+            --cv-sidebar-width: 320px;
+        }
+
+        .cv-container {
+            max-width: 1100px;
+            margin: 8rem auto 3rem;
+            display: grid;
+            grid-template-columns: var(--cv-sidebar-width) 1fr;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .cv-sidebar {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 2rem;
+            border-right: 1px solid var(--glass-border);
+        }
+
+        .cv-main {
+            padding: 2.5rem;
+            background: rgba(10, 10, 10, 0.1);
+        }
+
+        .cv-section {
+            margin-bottom: 1.5rem;
+            padding: 0; 
+        }
+
+        .cv-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-section-title {
+            font-size: 1.2rem;
+            color: var(--accent-red);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .cv-section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, var(--glass-border), transparent);
+        }
+
+        .experience-item {
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 1px solid var(--glass-border);
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 0;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-red);
+            border: 1px solid var(--bg-card);
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.4rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+        }
+
+        .exp-company {
+            color: var(--accent-red);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .exp-location {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .exp-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            background: var(--glass);
+            padding: 0.15rem 0.6rem;
+            border-radius: 4px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .exp-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 4px;
+            margin: 0.2rem;
+            font-size: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .language-table {
+            width: 100%;
+            font-size: 0.75rem;
+            border-collapse: collapse;
+            margin-top: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .language-table th {
+            text-align: left;
+            padding: 0.4rem;
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--accent-red);
+        }
+
+        .language-table td {
+            padding: 0.4rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 10001;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            background: linear-gradient(to right, var(--accent-red));));
+            color: white;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        @media print {
+            nav, footer, .print-btn { display: none !important; }
+            
+            body { 
+                background-color: #0a0a0a !important; 
+                color: #ffffff !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            .cv-container {
+                margin: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                width: 100% !important;
+                max-width: none !important;
+                background-color: #141414 !important;
+                display: grid !important;
+                grid-template-columns: 240px 1fr !important; 
+                color: #ffffff !important;
+            }
+
+            .cv-sidebar {
+                background-color: rgba(255, 255, 255, 0.02) !important;
+                border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+            }
+
+            .cv-main {
+                background-color: rgba(10, 10, 10, 0.1) !important;
+            }
+
+            .exp-title, .exp-company, .language-table th, .cv-section-title {
+                var(--accent-red) !important;
+            }
+
+            .exp-desc, .bullet-list li, .contact-item, .exp-location, .language-table td {
+                color: #a0a0a0 !important;
+            }
+
+            .skill-tag, .exp-date {
+                background-color: rgba(255, 255, 255, 0.05) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                color: #ffffff !important;
+            }
+
+            .cv-section-title::after {
+                display: block !important;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent) !important;
+            }
+
+            .experience-item, .cv-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .cv-container { grid-template-columns: 1fr; margin-top: 8rem; }
+            .cv-sidebar { border-right: none; border-bottom: 1px solid var(--glass-border); }
+        }
+
+        /* Hidden elements that appear only on print or when edited */
+        .print-only-data {
+            display: none !important;
+        }
+
+        @media print {
+            .print-only-data {
+                display: block !important;
+            }
+            .section-hidden {
+                display: none !important;
+            }
+            #cv-editor-panel {
+                display: none !important;
+            }
+        }
+
+        /* Admin/Editor Panel Styles */
+        #cv-editor-panel {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10002;
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid var(--accent-red);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            width: 350px;
+            display: none; 
+            backdrop-filter: blur(20px);
+        }
+
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .editor-field {
+            margin-bottom: 1.2rem;
+        }
+
+        .editor-field label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--accent-red);
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+            font-weight: 700;
+        }
+
+        .editor-field input {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--glass-border);
+            padding: 0.6rem;
+            color: white;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .editor-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">Francesco Luca Del Vecchio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="cv.html" class="active">CV</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="cv-container reveal">
+                <!-- Sidebar -->
+                <aside class="cv-sidebar">
+                    <div style="text-align: center; margin-bottom: 3rem;">
+                        <img src="assets/images/francesco_profile.jpg" alt="Francesco Luca Del Vecchio" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent-red); margin-bottom: 1.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.4);">
+                        <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem; font-family: 'Outfit';">Francesco Luca Del Vecchio</h1>
+                        <p style="color: var(--accent-red); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem;">Game Programmer and Game UI Programmer</p>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title" style="font-size: 1rem;">Contact</h3>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+                            <p>Milan, Italy</p>
+                            <p><a href="mailto:francescodvecchio13@gmail.com">francescodvecchio13@gmail.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title" style="font-size: 1rem;">Languages</h3>
+                        <p style="font-size: 0.9rem; color: var(--text-primary);"><strong>ITALIAN:</strong> Mother tongue</p>
+                        <p style="font-size: 0.9rem; color: var(--text-primary); margin-top: 0.5rem;"><strong>ENGLISH:</strong></p>
+                        <table class="language-table">
+                            <tr><th>Skill</th><th>Level</th></tr>
+                            <tr><td>Listening</td><td>B2</td></tr>
+                            <tr><td>Reading</td><td>B2</td></tr>
+                            <tr><td>Writing</td><td>B2</td></tr>
+                            <tr><td>Oral Prod.</td><td>B2</td></tr>
+                            <tr><td>Oral Inter.</td><td>B2</td></tr>
+                        </table>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title" style="font-size: 1rem;">Digital Skills</h3>
+                        <div style="margin-bottom: 1.2rem;">
+                            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-red); margin-bottom: 0.6rem; font-weight: 800; letter-spacing: 1px;">Primary Expertise</p>
+                            <span class="skill-tag" style="border-color: var(--accent-red); background: rgba(0, 210, 255, 0.05);">Unreal Engine & C++</span>
+                            <span class="skill-tag" style="border-color: var(--accent-red); background: rgba(168, 85, 247, 0.05);">Unity & C#</span>
+                        </div>
+                        <div style="margin-bottom: 1.2rem;">
+                            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-red); margin-bottom: 0.5rem; font-weight: 700;">Programming & Systems</p>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Networking</span>
+                            <span class="skill-tag">Windows</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--accent-red); margin-bottom: 0.5rem; font-weight: 700;">Web Tech</p>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">Javascript</span>
+                        </div>
+                    </div>
+
+                    <div class="cv-section">
+                        <h3 class="cv-section-title" style="font-size: 1rem;">Soft Skills</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                            Managing multi-ethnic groups, sense of organization, time management, effective communication, and a strong problem-solving aptitude developed at Digital Bros Academy. Curiosity and propensity to learn new technologies.
+                        </p>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="cv-main">
+                    <section class="cv-section">
+                        <h3 class="cv-section-title">Work Experience</h3>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-title">UI Designer</span>
+                                <span class="exp-date">03/2024 – 03/2026</span>
+                            </div>
+                            <div class="exp-company">Shibboleth</div>
+                            <div class="exp-location">Milan, Italy</div>
+                            <p class="exp-desc">I worked as a graphic designer for newspapers and develop projects.</p>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-title">CallCenter, Technician & IT Support</span>
+                                <span class="exp-date">04/2022 – 10/2023</span>
+                            </div>
+                            <div class="exp-company">Mediacom s.r.l.</div>
+                            <div class="exp-location">Milan, Italy</div>
+                            <p class="exp-desc">Installation, verification of photovoltaic systems, and IT technician.</p>
+                            <ul class="bullet-list">
+                                <li>Inspections for the feasibility verification of plant sizing;</li>
+                                <li>Support of the construction management during the installation phase of the systems;</li>
+                                <li>Collaboration with the engineering group for the R&D of new products and project implementation;</li>
+                                <li>Management and control of orders and assistance to after-sales management;</li>
+                                <li>Management of computer software and internal network.</li>
+                            </ul>
+                        </div>
+                        
+                    </section>
+
+                    <section class="cv-section">
+                        <h3 class="cv-section-title">Education</h3>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Digital Bros Game Academy (ONGOING)</span>
+                                <span class="exp-date">Expected 07/2026</span>
+                            </div>
+                            <div class="exp-company">Digital Bros | Milan, Italy</div>
+                            <ul class="bullet-list">
+                                <li>Programming in C# and C++;</li>
+                                <li>Developing games in Unity and Unreal Engine for 2D and 3D projects;</li>
+                                <li>Evaluating project complexity and estimating delivery timelines;</li>
+                                <li>Writing technical documentation;</li>
+                                <li>Implementing game designs into playable experiences;</li>
+                                <li>Effective communication and teamwork;</li>
+                                <li>Identifying and resolving technical challenges;</li>
+                                <li>Applying mathematical concepts to game development;</li>
+                                <li><strong>AWARD:</strong> Best Project Award for "ArtHiss" (Dec 2024);</li>
+                                <li><strong>AWARD:</strong> Best Potential Award for "Ragnaraft" (April 2025).</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Gaming for business</span>
+                                <span class="exp-date">12/2023 – 04/2024</span>
+                            </div>
+                            <div class="exp-company">Tecna evolution s.r.l, Italy</div>
+                            <p class="exp-desc">Focus on soft skills and work with Unreal Engine.</p>
+                            <p style="font-size: 0.85rem; color: var(--text-primary); margin-top: 0.5rem;"><strong>Programming:</strong> Blueprint.</p>
+                        </div>
+
+                        <div class="experience-item">
+                            <div class="exp-header">
+                                <span class="exp-title">Computer Technician Diploma</span>
+                                <span class="exp-date">09/2015 – 06/2020</span>
+                            </div>
+                            <div class="exp-company">ITT and Ettore Molinari Scientific High School, Italy</div>
+                            <ul class="bullet-list">
+                                <li><strong>Computer Science:</strong> Python, C, Database management;</li>
+                                <li><strong>Systems:</strong> Hardware, Processors, PC construction, Networks;</li>
+                                <li><strong>Electronics:</strong> Analog and digital.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="cv-section">
+                        <h3 class="cv-section-title">Certifications & Training</h3>
+                        <div class="experience-item">
+                            <div class="exp-header"><span class="exp-title">Best Project Award (ArtHiss)</span><span class="exp-date">12/2024</span></div>
+                            <p class="exp-desc">Awarded by Digital Bros Game Academy for technical excellence and project execution.</p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="exp-header"><span class="exp-title">Best Potential Award (Ragnaraft)</span><span class="exp-date">04/2025</span></div>
+                            <p class="exp-desc">Awarded by Digital Bros Game Academy for technical excellence and potential execution.</p>
+                        </div>
+                        <div class="experience-item">
+                            <div class="exp-header"><span class="exp-title">Cisco: It essential</span><span class="exp-date">2018</span></div>
+                            <p class="exp-desc">IP addressing, Ethernet, Switch/Router configuration, and network access.</p>
+                        </div>
+                    </section>
+                    
+
+                    <section class="cv-section">
+                        <h3 class="cv-section-title">Hobbies & Interests</h3>
+                        <p class="exp-desc">In my free time, I enjoy reading books and playing card games. I am also a passionate gamer and occasionally work on my hand to developing indie games.</p>
+                    </section>
+
+                    <div id="cv-footer-legal" style="margin-top: 3rem; font-size: 0.7rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid var(--glass-border); padding-top: 1.5rem; opacity: 0.6;">
+                        I authorize the processing of my personal data contained in this CV for recruitment purposes, in accordance with Article 13 of Regulation (EU) 2016/679 (GDPR) and the applicable Italian data protection legislation.                    </div>
+
+                  
+                    <div id="print-signature-area" class="print-only-data" style="margin-top: 2rem; border-top: 1px dashed var(--glass-border); padding-top: 1rem;">
+                        <img id="signature-img" src="" alt="Signature" style="max-height: 60px; display: none;">
+                        <p id="signature-name" style="font-family: 'Outfit'; font-weight: 700; margin-top: 0.5rem;"></p>
+                        <p style="font-size: 0.6rem; opacity: 0.5; text-transform: uppercase;">Digital Signature / Firma Digitale</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+  
+    <div id="cv-editor-panel">
+        <div class="editor-header">
+            <h4 style="margin: 0; color: white;">CV Admin Panel</h4>
+            <span id="close-editor" style="cursor: pointer; font-size: 1.2rem;">✕</span>
+        </div>
+        
+        <div class="editor-field">
+            <label>Phone Number</label>
+            <input type="text" id="input-phone" placeholder="+39 XXX XXXXXXX">
+        </div>
+
+        <div class="editor-field">
+            <label>Signature PNG</label>
+            <input type="file" id="input-sig-file" accept="image/png, image/jpeg">
+        </div>
+
+        <div class="editor-field">
+            <label>Full Name (for signature)</label>
+            <input type="text" id="input-sig-name" placeholder="Francesco Luca Del Vecchio">
+        </div>
+
+        <div style="margin-top: 1rem; border-top: 1px solid var(--glass-border); padding-top: 1rem;">
+            <label style="font-size: 0.65rem; color: var(--accent-red); margin-bottom: 0.8rem; display: block; font-weight: 800;">VISIBILITY</label>
+            <label class="editor-toggle"><input type="checkbox" checked data-section="Hobbies & Interests"> Hobbies</label>
+            <label class="editor-toggle"><input type="checkbox" checked data-section="Certifications & Training"> Certifications</label>
+            <label class="editor-toggle"><input type="checkbox" checked data-section="Articles & Honors"> Honors</label>
+            <label class="editor-toggle"><input type="checkbox" checked data-section="Soft Skills"> Soft Skills</label>
+        </div>
+
+        <button onclick="window.print()" style="width: 100%; margin-top: 1.5rem; padding: 0.8rem; background: linear-gradient(to right, var(--accent-red)); border: none; border-radius: 8px; color: white; font-weight: 700; cursor: pointer;">
+            GENERATE PDF
+        </button>
+        <p style="text-align: center; font-size: 0.6rem; color: var(--text-secondary); margin-top: 1rem;">Press 'E' again to hide this panel</p>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+        <span style="font-size: 1.2rem;">🖨️</span> Print Full CV to PDF
+    </button>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Francesco Luca Del Vecchio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Secret Keyboard Shortcut (E key)
+        const panel = document.getElementById('cv-editor-panel');
+        const closeBtn = document.getElementById('close-editor');
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key.toLowerCase() === 'e' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                panel.style.display = (panel.style.display === 'block') ? 'none' : 'block';
+            }
+        });
+
+        closeBtn.onclick = () => panel.style.display = 'none';
+
+       
+        const phoneInput = document.getElementById('input-phone');
+        const contactDiv = document.querySelector('.cv-section div[style*="line-height: 1.8"]');
+        
+        phoneInput.oninput = (e) => {
+            let phoneP = document.getElementById('dynamic-phone');
+            if (!phoneP) {
+                phoneP = document.createElement('p');
+                phoneP.id = 'dynamic-phone';
+                phoneP.style.display = 'block'; // Make it visible during edit
+                phoneP.style.color = 'var(--accent-blue)';
+                contactDiv.prepend(phoneP);
+            }
+            phoneP.innerHTML = '📞 ' + e.target.value;
+        };
+
+        
+        const sigFile = document.getElementById('input-sig-file');
+        const sigImg = document.getElementById('signature-img');
+        const sigNameInput = document.getElementById('input-sig-name');
+        const sigNameDisplay = document.getElementById('signature-name');
+        const sigArea = document.getElementById('print-signature-area');
+
+        sigFile.onchange = (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    sigImg.src = event.target.result;
+                    sigImg.style.display = 'block';
+                    sigArea.style.display = 'block'; // Show for preview
+                };
+                reader.readAsDataURL(file);
+            }
+        };
+
+        sigNameInput.oninput = (e) => {
+            sigNameDisplay.innerText = e.target.value;
+            sigArea.style.display = 'block'; // Show for preview
+        };
+
+      
+        document.querySelectorAll('.editor-toggle input').forEach(checkbox => {
+            checkbox.onchange = (e) => {
+                const sectionName = e.target.getAttribute('data-section');
+                const sections = document.querySelectorAll('.cv-section');
+                sections.forEach(s => {
+                    const title = s.querySelector('.cv-section-title');
+                    if (title && title.innerText.includes(sectionName)) {
+                        if (e.target.checked) s.classList.remove('section-hidden');
+                        else s.classList.add('section-hidden');
+                    }
+                });
+            };
+        });
+    </script>
+</body>
+</html>
