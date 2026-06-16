@@ -202,6 +202,7 @@ nav .container {
     backdrop-filter: blur(2px);
     z-index: 50;
     nts: none;
+    pointer-events: none; /*guarda qui prima*/
 }
 
 .web::before {
@@ -332,6 +333,17 @@ nav .container {
     transform: translate(-50%, -50%) translateX(var(--offset-x, 0));
     transform-style: preserve-3d;
     nts:auto;
+    pointer-events: none;
+}
+.card-orbit-container.clickable {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateX(var(--offset-x, 0));
+    transform-style: preserve-3d;
+    nts:auto;
+    pointer-events: auto; /* solo queste cliccabili */
+    cursor: pointer;
 }
 
 .card-orbit-path {
@@ -371,7 +383,6 @@ nav .container {
     left: 6%;
     width: 60%;
     height: 36%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.15) 30%, transparent 60%);
     border-radius: 10px;
     z-index: 5;
     nts: none;
@@ -379,8 +390,7 @@ nav .container {
 }
 
 .project-card:hover {
-    box-shadow: 0 0 60px var(--accent-red), inset 0 0 40px var(--accent-red);
-    border-color: var(--accent-red);
+    box-shadow: 0 0 60px var(--accent-white), inset 0 0 40px var(--accent-white);
 }
 
 /* Card positions and animations */
@@ -413,7 +423,7 @@ nav .container {
 .card-25 { --offset-x: 640px;  --fall-duration: 6.7s; }
 .card-26 { --offset-x: 640px; --fall-duration: 9.3s; }
 .card-27 { --offset-x: 640px; --fall-duration: 5.2s; }
-.card-28 { --offset-x: 640px; --fall-duration: 2.6s; }
+.card-28 { --offset-x: 640px; --fall-duration: 0.9s; }
 
 .card-1 .project-card  { --revX: -65deg; animation-duration: 20s; }
 .card-2 .project-card  { --revX: 65deg; animation-duration: 25s; animation-direction: reverse; }
@@ -789,5 +799,86 @@ footer {
     color: white;
     background: none;
     border: none;
+    cursor: pointer;
+}
+
+
+/* ===== NEW HERO SHOWCASE ===== */
+
+.center-card {
+    position: relative;
+    width: 350px;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-150px) translateY(-150px) rotate(0deg);
+
+}
+
+.center-card .project-card {
+    width: 260px;
+    height: 380px;
+    transform: translate(50px, 5%) rotate(0deg);
+
+}
+body.easteregg .web::before {
+    display: none !important;
+}
+
+/* ===== GEMS ===== */
+
+.gem {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    transform: rotate(45deg);
+    animation: pulseGem 2s infinite;
+}
+/*
+.orbit {
+    position: absolute;
+    inset: 0;
+    transform-origin: center;
+    animation: orbit 6s linear infinite;
+}
+/* disposizione perfettamente simmetrica */
+
+.gem-1 { top: -150px; left: 175px; background: var(--accent-red); }
+
+.gem-2 { top: -20px; right: -70px; background: var(--accent-orange); }
+
+.gem-3 { bottom: 20px; right: -70px; background: var(--accent-purple); }
+
+.gem-4 { bottom: -150px; left: 175px; background: var(--accent-white); }
+
+.gem-5 { bottom: 20px; left: -70px; background: var(--accent-green);}
+
+.gem-6 { top: -20px; left: -70px; background: var(--accent-blue);}
+
+@keyframes pulseGem {
+    0%,100% {
+        opacity: .8;
+        transform: scale(1) rotate(45deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(45deg);
+    }
+}
+@keyframes orbit {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 999;
+    display: block;
     cursor: pointer;
 }
